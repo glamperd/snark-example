@@ -1,0 +1,11 @@
+{
+  "name": "snark-example",
+  "version": "1.0.0",
+  "description": "Example snarkjs & circom app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Geoff Lamperd",
+  "license": "ISC"
+}

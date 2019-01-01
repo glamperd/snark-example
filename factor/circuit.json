@@ -1,0 +1,112 @@
+{
+ "mainCode": "{\n}\n",
+ "signalName2Idx": {
+  "one": 0,
+  "main.a": 2,
+  "main.b": 3,
+  "main.c": 1,
+  "main.inva": 4,
+  "main.invb": 5
+ },
+ "components": [
+  {
+   "name": "main",
+   "params": {},
+   "template": "Multiplier",
+   "inputSignals": 2
+  }
+ ],
+ "componentName2Idx": {
+  "main": 0
+ },
+ "signals": [
+  {
+   "names": [
+    "one"
+   ],
+   "triggerComponents": []
+  },
+  {
+   "names": [
+    "main.c"
+   ],
+   "triggerComponents": []
+  },
+  {
+   "names": [
+    "main.a"
+   ],
+   "triggerComponents": [
+    0
+   ]
+  },
+  {
+   "names": [
+    "main.b"
+   ],
+   "triggerComponents": [
+    0
+   ]
+  },
+  {
+   "names": [
+    "main.inva"
+   ],
+   "triggerComponents": []
+  },
+  {
+   "names": [
+    "main.invb"
+   ],
+   "triggerComponents": []
+  }
+ ],
+ "constraints": [
+  [
+   {
+    "0": "21888242871839275222246405745257275088548364400416034343698204186575808495616",
+    "2": "1"
+   },
+   {
+    "4": "1"
+   },
+   {
+    "0": "1"
+   }
+  ],
+  [
+   {
+    "0": "21888242871839275222246405745257275088548364400416034343698204186575808495616",
+    "3": "1"
+   },
+   {
+    "5": "1"
+   },
+   {
+    "0": "1"
+   }
+  ],
+  [
+   {
+    "2": "21888242871839275222246405745257275088548364400416034343698204186575808495616"
+   },
+   {
+    "3": "1"
+   },
+   {
+    "1": "21888242871839275222246405745257275088548364400416034343698204186575808495616"
+   }
+  ]
+ ],
+ "templates": {
+  "Multiplier": "function(ctx) {\n    ctx.setSignal(\"inva\", [], bigInt(\"1\").mul( bigInt(bigInt(ctx.getSignal(\"a\", [])).add(__P__).sub(bigInt(\"1\")).mod(__P__)).inverse(__P__) ).mod(__P__));\n    ctx.assert(bigInt(bigInt(ctx.getSignal(\"a\", [])).add(__P__).sub(bigInt(\"1\")).mod(__P__)).mul(bigInt(ctx.getSignal(\"inva\", []))).mod(__P__), \"1\");\n    ctx.setSignal(\"invb\", [], bigInt(\"1\").mul( bigInt(bigInt(ctx.getSignal(\"b\", [])).add(__P__).sub(bigInt(\"1\")).mod(__P__)).inverse(__P__) ).mod(__P__));\n    ctx.assert(bigInt(bigInt(ctx.getSignal(\"b\", [])).add(__P__).sub(bigInt(\"1\")).mod(__P__)).mul(bigInt(ctx.getSignal(\"invb\", []))).mod(__P__), \"1\");\n    ctx.setSignal(\"c\", [], bigInt(ctx.getSignal(\"a\", [])).mul(bigInt(ctx.getSignal(\"b\", []))).mod(__P__));\n    ctx.assert(ctx.getSignal(\"c\", []), bigInt(ctx.getSignal(\"a\", [])).mul(bigInt(ctx.getSignal(\"b\", []))).mod(__P__));\n}\n"
+ },
+ "functions": {},
+ "nPrvInputs": 2,
+ "nPubInputs": 0,
+ "nInputs": 2,
+ "nOutputs": 1,
+ "nVars": 6,
+ "nConstants": 0,
+ "nSignals": 6
+}
