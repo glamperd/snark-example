@@ -43,9 +43,9 @@ template Poker() {
    or2.b <-- not3.out;
    or2.out === 1;
 
-   component and1 = AND();
-   and1.a <-- check1;
-   and1.b <-- or2.out;
+   //component and1 = AND();
+   //and1.a <-- check1;
+   //and1.b <-- or2.out;
    out <-- or2.out;
    out === 1;
 }
