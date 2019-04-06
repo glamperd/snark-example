@@ -1,0 +1,14 @@
+{
+  "name": "merkle",
+  "version": "1.0.0",
+  "description": "Merkle tree in snarkjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Geoff Lamperd",
+  "license": "ISC",
+  "dependencies": {
+    "circomlib": "0.0.6"
+  }
+}
